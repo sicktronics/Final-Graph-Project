@@ -130,7 +130,7 @@ Note: More testing of functionality takes place in the "Demo" section of the pro
 
 - Test 9.2: Find MST of a connected graph
 
-![image](Test8.png)
+![image](Test9.png)
 
 ## 3. "Implement a graph class with at least (this category effectively combines implementation and specification, partly to emphasize getting the algorithms working!)"
 
