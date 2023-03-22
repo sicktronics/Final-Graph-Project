@@ -1,3 +1,7 @@
+Parker Mayer - CS 260 - 3/21/23
+
+# Final Graph Project
+
 ## 1. "Create a design before you start coding that describes or shows how a graph structure could be used to store some kinds of data and solve some kind of problem (yes, this can be a game that needs a graph to represent a map!)"
 
 ### Design Overview
