@@ -101,22 +101,22 @@ int main(int argc, char** argv){
     // g.shortestPath("A", "C");
     // cout << "End of test reached.\n" << endl;
 
-    cout << "Test 9.1: Find MST of an unconnected graph" << endl;
-    Graph g;
+    // cout << "Test 9.1: Find MST of an unconnected graph" << endl;
+    // Graph g;
 
-    g.addNode("A");
-    g.addNode("B");
-    g.addNode("C");
+    // g.addNode("A");
+    // g.addNode("B");
+    // g.addNode("C");
 
-    g.minimumSpanningTree();
-    cout << "End of test reached.\n" << endl;
+    // g.minimumSpanningTree();
+    // cout << "End of test reached.\n" << endl;
 
-    cout << "Test 9.2: Find MST of a connected graph" << endl;
-    g.addEdge("A", "B", 4);
-    g.addEdge("B", "C", 3);
-    g.addEdge("A", "C", 6);
-    g.minimumSpanningTree();
-    cout << "End of test reached.\n" << endl;
+    // cout << "Test 9.2: Find MST of a connected graph" << endl;
+    // g.addEdge("A", "B", 4);
+    // g.addEdge("B", "C", 3);
+    // g.addEdge("A", "C", 6);
+    // g.minimumSpanningTree();
+    // cout << "End of test reached.\n" << endl;
 
 
 

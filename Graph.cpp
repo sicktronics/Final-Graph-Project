@@ -230,8 +230,6 @@ void Graph::shortestPath(string sourceNode, string destinationNode){
     cout << "Arrived!!" << endl;
 } 
 
-// ----
-
 // This compareEdgeCost method is used by the minimumSpanning tree method,
 // it simply compares the cost of two edges.
 bool compareEdgeCost(Edge *e1, Edge *e2){

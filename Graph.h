@@ -22,8 +22,7 @@ class Graph {
         void minimumSpanningTree();
 
     private:
-        vector<Node *> nodes;
-        int numNodes;
-        std::unordered_map<Node *, Node *> PARENT;
-        std::unordered_map<Node *, int> RANK;
+        vector<Node *> nodes;   // All the nodes in our graph
+        std::unordered_map<Node *, Node *> PARENT; // These are used in the disjointed unions for
+        std::unordered_map<Node *, int> RANK;      // Kruskal's algorithm
 };
