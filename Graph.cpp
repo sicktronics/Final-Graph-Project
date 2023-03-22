@@ -13,6 +13,11 @@ using std::cout;
 using std::endl;
 using std::unordered_map;
 
+/*
+* Parker Mayer
+* CS 260
+* 3/21/23
+*/
 
 // Add a node using name, returns true if node was successfully added, false otherwise
 bool Graph::addNode(string nodeName){

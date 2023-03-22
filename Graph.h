@@ -3,14 +3,24 @@
 #include "Node.h"
 #include "Edge.h"
 
+/*
+* Parker Mayer
+* CS 260
+* 3/21/23
+*/
+
+// The Graph class has methods for adding and removing nodes or edges,
+// printing the graph, finding the shortest path between two nodes,
+// and finding the minimum spanning tree.
+
 class Graph {
 
     public:
-
+        // Detailed comments can be found in "Graph.cpp"
         bool addNode(string nodeName);
         bool addEdge(string sourceNode, string destinationNode, int cost);
 
-        bool removeNode(string nodeName); // maybe also have it remove associated edges!
+        bool removeNode(string nodeName);
         bool removeEdge(string sourceNode, string destinationNode);
 
         void toString();

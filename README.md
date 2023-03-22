@@ -6,6 +6,8 @@ The context: You are one of OSU's food delivery robots. Given a map of the campu
 
 You have the ability to find the shortest path from your current location to any other location on campus, and can generate a minimum spanning tree of the graph (NOTE: I now realize that directed graphs don't generally work to find MSTs given their often disconnected nature—however, I think I still found a way to make it work in this case (see below)).
 
+See "Full Demo" section below to see this design in action.
+
 ![image](Map.png)
 
 ### Design Details
@@ -41,6 +43,7 @@ A node struct that stores:
 - An ID number (used for selecting certain nodes in Dijkstra's algorithm)
 
 An edge struct that stores:
+
 - A pointer to a source node
 - A pointer to a destination node
 - An associated edge cost (or "weight")
@@ -148,5 +151,27 @@ Note: More testing of functionality takes place in the "Demo" section of the pro
 
 ## 4. "Analyze the complexity of all of your graph behaviors (effectively a part of our documentation for grading purposes)"
 
+![image](Complexity.png)
+
+## Full Demo
+
+This demo implements the OSU food robot's delivery map above and tests all of the functionality on the graph. The demo can be found in Driver.cpp.
+
+![image](Demo1.png)
+![image](Demo2.png)
+
+## Resources Used
+
+For shortest path:
+
+- https://favtutor.com/blogs/dijkstras-algorithm-cpp#:~:text=What%20is%20Dijkstra's%20Algorithm%3F,other%20points%20in%20the%20graph
+- https://www.educative.io/answers/how-to-implement-dijkstras-algorithm-in-cpp
+- https://www.geeksforgeeks.org/shortest-path-in-a-directed-graph-by-dijkstras-algorithm/
+- https://www.geeksforgeeks.org/printing-paths-dijkstras-shortest-path-algorithm/
+
+For MST:
+- https://www.youtube.com/watch?v=5xosHRdxqHA
+- https://www.programiz.com/dsa/kruskal-algorithm
+- https://favtutor.com/blogs/kruskal-algorithm-cpp
 
 
