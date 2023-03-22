@@ -1,3 +1,7 @@
+## 1. "Create a design before you start coding that describes or shows how a graph structure could be used to store some kinds of data and solve some kind of problem (yes, this can be a game that needs a graph to represent a map!)"
+
+- add note about directed graph, mst conflict
+
 ## 2. "Create some tests (at least two for each piece of functionality) before you start coding..."
 
 Note: More testing of functionality takes place in the "Demo" section of the project below.
@@ -70,7 +74,14 @@ Note: More testing of functionality takes place in the "Demo" section of the pro
 ![image](Test8.png)
 
 
-### Test 9: minimumSpanningTree method
+### Test 9: minimumSpanningTree method (and by association, compareEdgeCost, find, and setUnion methods)
+
+- Test 9.1: Find MST of an unconnected graph
+
+- Test 9.2: Find MST of a connected graph
+
+![image](Test8.png)
+
 
 
 

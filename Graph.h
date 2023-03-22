@@ -19,7 +19,7 @@ class Graph {
 
         Node *find(Node *n);
         void setUnion(Node *root1, Node *root2);
-        string minimumSpanningTree();
+        void minimumSpanningTree();
 
     private:
         vector<Node *> nodes;

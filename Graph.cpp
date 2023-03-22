@@ -232,82 +232,82 @@ void Graph::shortestPath(string sourceNode, string destinationNode){
 
 // ----
 
+// This compareEdgeCost method is used by the minimumSpanning tree method,
+// it simply compares the cost of two edges.
 bool compareEdgeCost(Edge *e1, Edge *e2){
     return e1->cost < e2->cost;
 }
 
+// This find method is used by the minimumSpanning tree method.
+// It recursively finds the "parent node" of a disjoint set
 Node *Graph::find(Node *n){
-
+    // Base case, the node is the parent, return it
     if(PARENT[n] == n){
         return n;
+    // otherwise go a level up in the tree
     } else {
         return find(PARENT[n]);
     }
 }
 
+// This setUnion method is used by the minimumSpanning tree method.
+// It joins two disjoint sets and determines which becomes the new parent
 void Graph::setUnion(Node *root1, Node *root2){
-
+    // Root 1 becomes parent of root 2 if its rank is greater
     if(RANK[root1] > RANK[root2]){
         PARENT[root2] = root1;
+    // Likewise, if the rank of root 2 is greater, it becomes the parent
     } else if(RANK[root2] > RANK[root1]){
         PARENT[root1] = root2;
+    // Otherwise, increase the rank of root 2 if they're of the same rank
     } else {
         PARENT[root1] = root2;
         RANK[root2]++;
     }
-
 }
 
-// Find a minimum spanning tree and return it... *more details later*
-string Graph::minimumSpanningTree(){
+// Find a minimum spanning tree using Kruskal's Algorithm.
+// And print it out.
+void Graph::minimumSpanningTree(){
 
-    // Need array to store MST
+    // Vector of edges to store the MST
     vector<Edge *> mst;
 
-    // Vector to store the edges in our graph
+    // Vector to store all of the edges (will be sorted by cost later)
     vector<Edge *> edges;
 
 
     // Take all vertices of the graph and make them a single-vertex disjoint set
     for(int i = 0; i < nodes.size(); i++){
+        // AKA, each node is its own parent
         PARENT[nodes[i]] = nodes[i];
+        // And the rank of each is 0 to start
         RANK[nodes[i]] = 0;
 
-        // Create edges vector
+        // Iterate over each node's edges...
         for(int j = 0; j < nodes[i]->neighbors.size(); j++){
+            //...add them to the edges vector
             edges.push_back(nodes[i]->neighbors[j]);
         }
     }
-
+    // Use the sort method from the vector library, and use edge cost
+    // as the determining factor (see compareEdgeCost method above)
     sort(edges.begin(), edges.end(), compareEdgeCost);
 
+    // Iterate over each edge
     for(int i = 0; i < edges.size(); i++){
-
+        // Create pointers to the source and destination nodes
         Node *root1 = find(edges[i]->sourceNode);
         Node *root2 = find(edges[i]->destinationNode);
-
+        // IF the source is not the destination...
         if(root1 != root2){
-            mst.push_back(edges[i]);
-            setUnion(root1, root2);
+            mst.push_back(edges[i]);    // ...add it to the MST
+            setUnion(root1, root2);     // ...and union their two disjoint sets
         }
     }
-
+    // Finally, print out the edges that Make up the MST
     for(int i = 0; i < mst.size(); i++){
-        cout << mst[i]->sourceNode->nodeName << "  " << mst[i]->destinationNode->nodeName << "  " << mst[i]->cost << endl;
+        cout << mst[i]->sourceNode->nodeName << " to " << mst[i]->destinationNode->nodeName << " with cost " << mst[i]->cost << endl;
     }
-
-
-return "";
 }
 
-// Start of private methods
-
-// Finds the node with name, return pointer to that node with that name
-// Node *Graph::findNodeHelper(string nodeName){
-// return nullptr;
-// }
-
-// // Finds the edge with given source and destination, return pointer to that edges
-// Edge *Graph::findEdgeHelper(string sourceNode, string destinationNode){
-// return nullptr;
-// }
